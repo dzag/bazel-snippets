@@ -1,7 +1,9 @@
 filegroup(
-  name = "configs",
-  srcs = [
-    ".env"
-  ],
-  visibility = ["//visibility:public"],
+    name = "configs",
+    srcs = [
+        ".env",
+        ".env.development",
+        ".env.production"
+    ],
+    visibility = ["//visibility:public"],
 )

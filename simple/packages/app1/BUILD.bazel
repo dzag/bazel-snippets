@@ -5,13 +5,14 @@ go_library(
     srcs = ["main.go"],
     importpath = "simple/packages/app1",
     visibility = ["//visibility:public"],
+    deps = ["//packages/shared:go_default_library"],
 )
 
 go_binary(
     name = "app1",
+    data = [
+        "//packages/configs",
+    ],
     embed = [":go_default_library"],
     visibility = ["//visibility:public"],
-    data = [
-        "//packages/configs"
-    ]
 )
